@@ -8,6 +8,21 @@ class TasksController < ApplicationController
 		@task.save
 		render json: @task
 	end
+	def show
+		@task = Task.find(params[:id])
+		render json: @task
+	end
+	def update
+		@task = Task.find(params[:id])
+		data = json_data['task']
+		@task.update(data)
+		@task.save
+		render json: @task
+	end
+	def destroy
+		@task = Task.find(params[:id])
+		render json: @task.delete()
+	end
 	private
 	def json_data
 		request.body.rewind
