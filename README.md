@@ -3,7 +3,7 @@
 - http://edgeguides.rubyonrails.org/api_app.html
 - http://todomvc.com/
 
-Your task: over a few weeks, develop a persistent version of a todo app using JS frontend and a Rails JSON backend. The guide we will be following is http://edgeguides.rubyonrails.org/api_app.html and the assets and design for the todo app will be from http://todomvc.com 
+Your task: over a few weeks, develop a persistent version of a todo app using JS frontend and a Rails JSON backend. The guide we will be following is http://edgeguides.rubyonrails.org/api_app.html and the assets and design for the todo app will be from http://todomvc.com
 
 
 Day 1:
