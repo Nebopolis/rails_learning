@@ -16,20 +16,33 @@ class TasksController < ApplicationController
 
 	def show
 		@task = Task.find(params[:id])
-		render json: @task
+		if @task
+			render json: {"task" => @task}
+		else
+			render :nothing => true, :status => 404
+		end
 	end
 
 	def update
 		@task = Task.find(params[:id])
 		data = json_data['task']
 		@task.update(data)
-		@task.save
-		render json: @task
+		if @task
+			data = json_data['task']
+			@task.update(data)
+			if @task.valid?
+				render json: {"task" => @task.save}
+			else
+				render :nothing => true, :status => 422
+			end
+		else
+			render :nothing => true, :status => 404
+		end
 	end
 
 	def destroy
 		@task = Task.find(params[:id])
-		render json: @task.delete()
+		render json: {"task" => @task.delete()}
 	end
 
 	private

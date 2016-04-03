@@ -3,9 +3,10 @@
 {{#each model as |task|}}
     <div class="panel panel-default">
         <div class="panel-body">
-            <p>Body:{{input type="text" value=task.body class="form-control" placeholder="model.body"}}</p>
-            <p>Complete: {{input type="checkbox" checked=task.complete class="form-control" placeholder="Is it complete"}}</p>
+            <p>Body:{{input type="text" value=task.body class="form-control"}}</p>
+            <p>Complete: {{input type="checkbox" checked=task.complete class="form-control"}}</p>
         </div>
     </div>
 {{/each}}
 <p><button type="submit" class="btn btn-default" {{action 'saveTask' model}}>Update tasks</button></p>
+{{outlet}}
