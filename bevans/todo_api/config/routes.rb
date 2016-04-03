@@ -13,7 +13,9 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   resources :tasks
-
+  controller :tasks, path: '/tasks' do
+    match 'empty', via: [ :options]
+  end
   # Example resource route with options:
   #   resources :products do
   #     member do

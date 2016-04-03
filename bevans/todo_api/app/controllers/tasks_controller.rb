@@ -1,12 +1,12 @@
 class TasksController < ApplicationController
 	skip_before_filter :verify_authenticity_token
 	def index
-		render json: Task.all
+		render json: {"tasks" => Task.all}
 	end
 	def create
 		@task = Task.new(json_data['task'])
 		@task.save
-		render json: @task
+		render json: {"task" => @task}
 	end
 	def show
 		@task = Task.find(params[:id])
