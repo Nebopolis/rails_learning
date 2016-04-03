@@ -1,0 +1,10 @@
+<h2>List</h2>
+
+{{#each model as |task|}}
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <p>Body: {{task.body}}</p>
+            <p>Complete: {{task.complete}}</p>
+        </div>
+    </div>
+{{/each}}

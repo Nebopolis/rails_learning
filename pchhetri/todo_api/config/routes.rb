@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 root 'tasks#index'
 resources :tasks
+controller :tasks, path: '/tasks' do
+  match 'empty', via: [ :options]
+end
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
