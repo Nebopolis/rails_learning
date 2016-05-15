@@ -42,7 +42,11 @@ class TasksController < ApplicationController
 
 	def destroy
 		@task = Task.find(params[:id])
-		render json: {"task" => @task.delete()}
+		if @task
+			render json: {"task" => @task.delete()}
+		else
+			render :nothing => true, :status => 404
+		end
 	end
 
 	private
